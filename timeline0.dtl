@@ -20,6 +20,7 @@ you: ....
 		[wait time="1.0"]
 		Mais vale um covarde vivo do que um corajoso morto.
 		[wait time="2.0"]
+		jump timeline0/
 		[end_timeline]
 	else:
 		[wait time="1.0"]
@@ -42,7 +43,7 @@ you: ....
 		[sound path="res://Audio/Som/knock Sound Effect.mp3" volume="-10.0"]
 		[wait time="2.0"]
 		you: AH...
-		Você se assusta e recua da janela.
+		Você se assusta com o som inesperado e recua da janela.
 		set {Assustado} = true
 		[wait time="0.5"]
 		jump Entrar no trem?

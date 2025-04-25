@@ -48,6 +48,7 @@ E a única forma de se libertar é mentir para o ignorante que acaba de entrar n
 	[wait time="2.0"]
 	Você tomou as dores dos outros e fez delas suas. Você será lembrado por isso.
 	[wait_input]
+	jump timeline0/
 	[end_timeline]
 - Enganar o desconhecido.
 	[wait time="0.5"]
@@ -66,5 +67,6 @@ E a única forma de se libertar é mentir para o ignorante que acaba de entrar n
 	[wait time="2.0"]
 	Fizeram o mesmo com você.
 	[wait_input]
+	jump timeline0/
 	[end_timeline]
 [wait_input]

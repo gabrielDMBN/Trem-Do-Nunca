@@ -39,13 +39,16 @@ layout/style_list=[]
 layout/default_style="Default"
 glossary/default_case_sensitive=true
 variables={
+"Anotation1": false,
+"Anotation2": false,
+"Anotation3": false,
 "Anotations": 0,
 "Assustado": false,
 "BookGhost": true,
 "BookRead": false,
 "Conductor": true,
 "ConductorTalked": false,
-"Door": false,
+"Door": true,
 "Paciencia": 0,
 "PacienciaPassado": 0
 }

@@ -14,19 +14,20 @@ you: Não há nenhum outro passageiro...?
 [wait time="1.5"]
 label InvestigarVagao
 [background arg="res://Images/TrainInterior0.png" fade="1.0" transition="Simple Fade"]
-if {ConductorTalked} == true:
-	if {BookRead} == true:
-		[wait time="0.5"]
-		condutor: Por favor, sente-se em algum dos assentos e tenha paciência.
-		[wait time="0.5"]
-		- Sentar-se.
-			[wait time="1.0"]
-			jump timeline2/
+if {BookRead} == true && {ConductorTalked} == true:
+	[wait time="0.5"]
+	condutor: Por favor, sente-se em algum dos assentos e tenha paciência.
+	[wait time="0.5"]
+	- Sentar-se.
+		[wait time="1.0"]
+		jump timeline2/
 Investigar o vagão.
 - Verificar assentos.
 	label Livro e Silhueta
 	if {BookGhost} == false:
 		[background arg="res://Images/TrainInteriorBookNobody.png" fade="1.0"]
+		[wait time="1.0"]
+		Você percebe um livro abandonado no assento ao lado de uma janela.
 		- Ler livro.
 			set {BookRead} = true
 			"Num trilho perdido, bem longe do chão,\

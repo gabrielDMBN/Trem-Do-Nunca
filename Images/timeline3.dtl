@@ -7,7 +7,7 @@ you: Não parece ter jeito de sair para o exterior por aqui.
 you: Então onde que o condutor pode estar..?
 label Cabine
 [wait time="1.0"]
-if {Anotations} >= 3.0:
+if {Anotation1} && {Anotation2} && {Anotation3} && {Door} == false:
 	[wait time="1.0"]
 	label Esperando estação
 	Você percebe ao exterior do trem uma estação muito semelhante à que você estava incialmente.
@@ -36,6 +36,7 @@ if {Anotations} >= 3.0:
 		[wait time="1.0"]
 		Por algum motivo você sente que nunca mais vai conseguir sair daí.
 		[wait_input]
+		jump timeline0/
 		[end_timeline]
 	Abrir porta externa do vagão de passageiros?
 	- Abrir.
@@ -56,17 +57,17 @@ if {Anotations} >= 3.0:
 	[wait time="0.5"]
 	label Anotacoes
 	- Anotação 1
-		set {Anotations} += 1.0
+		set {Anotation1} = true
 		"Não sei quanto tempo mais vou ficar preso nesse trem... Desde que entrei na cabine para procurar o condutor não consegui mais sair. É quase como se ele tivesse desaparecido para eu tomar seu lugar. Droga... está ficando frio e não sei o que fazer."
 		[wait time="0.5"]
 		jump Anotacoes
 	- Anotação 2
-		set {Anotations} += 1.0
+		set {Anotation2} = true
 		"Achei umas roupas do antigo condutor. Incrivelmente elas estão em perfeito estado e são suficientes para me aquecer. Tirando isso não há muito mais coisas na cabine, apenas um botão no painel que faz a porta do vagão mais próximo se abrir. Infelizmente essa porta não me ajuda a sair. Pensando bem... Posso tentar usar ela para chamar ajuda externa. "
 		[wait time="0.5"]
 		jump Anotacoes
 	- Anotação 3
-		set {Anotations} += 1.0
+		set {Anotation3} = true
 		"Já tive tempo suficiente dentro do trem para perceber que seu combustível nunca se acaba. Aqui é uma sensação esquisita. Além disso, parece que o trem sempre está voltando para apenas uma estação abandonada. Talvez devesse tentar parar o trem lá e esperar ajuda, mesmo nunca tendo visto ninguém por lá..."
 		[wait time="0.5"]
 		jump Anotacoes
