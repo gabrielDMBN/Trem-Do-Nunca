@@ -29,11 +29,11 @@ directories/dch_directory={
 "you": "res://you.dch"
 }
 directories/dtl_directory={
-"timeline0": "res://timeline0.dtl",
-"timeline1": "res://Images/timeline1.dtl",
-"timeline2": "res://timeline2.dtl",
-"timeline3": "res://Images/timeline3.dtl",
-"timeline4": "res://timeline4.dtl"
+"timeline0": "res://TimeLines/timeline0.dtl",
+"timeline1": "res://TimeLines/timeline1.dtl",
+"timeline2": "res://TimeLines/timeline2.dtl",
+"timeline3": "res://TimeLines/timeline3.dtl",
+"timeline4": "res://TimeLines/timeline4.dtl"
 }
 layout/style_list=[]
 layout/default_style="Default"
