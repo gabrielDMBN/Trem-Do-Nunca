@@ -1,0 +1,50 @@
+# Estação de trem
+[background arg="res://Images/TrainStation.png" fade="2.0" transition="Simple Fade"]
+[music path="res://Audio/Musica/Abandoned Subway Station ｜ Wind, Lights, Rubble ｜ 15 Minutes of Ambience.mp3" fade="1.5" volume="-10.0"]
+join you center
+[wait time="2.5"]
+you: Onde estou?
+[wait time="1.0"]
+É possível avistar um trem parado na estação.
+label Entrar no trem?
+[background arg="res://Images/TrainStation.png" fade="2.0" transition="Simple Fade"]
+[wait time="1.0"]
+you: ....
+
+- Esperar mais...
+	set {Paciencia} += 1.0
+	if {Paciencia} == 3.0:
+		Você desiste de entrar no trem.
+		Afinal...
+		[background arg="res://Images/ConductorWindow.png" fade="2.0"]
+		[wait time="1.0"]
+		Mais vale um covarde vivo do que um corajoso morto.
+		[wait time="2.0"]
+		[end_timeline]
+	else:
+		[wait time="1.0"]
+		Você se sente mais próximo de desistir de entrar no trem.
+		jump Entrar no trem?
+- Embarcar no trem.
+	Ainda que com uma certa aflição, você entra no trem.
+	[wait time="1.0"]
+	jump timeline1/
+- Verificar janela do trem.
+	if {Assustado} == true:
+		[wait time="0.5"]
+		Você não tem interesse de voltar para a janela.
+		[wait time="0.5"]
+		jump Entrar no trem?
+	else:
+		[background arg="res://Images/TrainOutsideBook.png" fade="1.0"]
+		[wait time="0.5"]
+		Você percebe uma silhueta dentro do trem, ao lado de um assento.
+		[sound path="res://Audio/Som/knock Sound Effect.mp3" volume="-10.0"]
+		[wait time="2.0"]
+		you: AH...
+		Você se assusta e recua da janela.
+		set {Assustado} = true
+		[wait time="0.5"]
+		jump Entrar no trem?
+[wait time="1.0"]
+jump timeline1/

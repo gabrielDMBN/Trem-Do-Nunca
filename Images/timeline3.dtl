@@ -1,0 +1,89 @@
+# Está na cabine
+[background arg="res://Images/TrainInterior2.png" fade="1.0"]
+[music path="res://Audio/Musica/TrainBackgroundNoise.mp3" fade="1.5" volume="-10.0"]
+[wait time="1.0"]
+you: Esquisito...
+you: Não parece ter jeito de sair para o exterior por aqui.
+you: Então onde que o condutor pode estar..?
+label Cabine
+[wait time="1.0"]
+if {Anotations} >= 3.0:
+	[wait time="1.0"]
+	label Esperando estação
+	Você percebe ao exterior do trem uma estação muito semelhante à que você estava incialmente.
+	[wait time="0.5"]
+	you: Essa é a mesma estação que eu estava antes de pegar o trem... Talvez eu devesse puxar o freio e esperar ajuda.
+	[wait time="1.0"]
+	- Puxar freio.
+		[wait time="0.5"]
+		Você puxa o freio e faz o trem parar na estação.
+		[wait time="1.0"]
+	- Deixar estação passar.
+		[wait time="0.5"]
+		Você deixa a estação passar e fica por algumas horas sem ver mais nenhum ponto de referência perto dos trilhos...
+		[wait time="1.0"]
+		jump Esperando estação
+	Você percebe um homem desconhecido fora do trem.
+	Ele parece estar incerto sobre se aproximar e entrar.
+	Por informações lidas nas anotações dos condutores, você sabe sobre o botão que abre a porta exterior do vagão de passageiros.
+	[wait time="0.5"]
+	label Abrir porta passageiros?
+	if {PacienciaPassado} >= 3.0:
+		[wait time="0.5"]
+		O desconhecido desiste e se afasta do trem, indo embora da estação abandonada.
+		[wait time="1.0"]
+		...
+		[wait time="1.0"]
+		Por algum motivo você sente que nunca mais vai conseguir sair daí.
+		[wait_input]
+		[end_timeline]
+	Abrir porta externa do vagão de passageiros?
+	- Abrir.
+		[wait time="0.5"]
+		[sound path="res://Audio/Som/doorClosing.mp3" volume="-15.0"]
+		[wait time="2.5"]
+		Você ouve a porta do vagão de passageiros abrindo.
+		[wait time="0.5"]
+		jump timeline4/
+	- Não abrir.
+		[wait time="0.5"]
+		O desconhecido continua encarando o trem, porém parece mais próximo de desistir.
+		set {PacienciaPassado} += 1.0
+		jump Abrir porta passageiros?
+- Verificar anotações no vidro.
+	[wait time="0.5"]
+	Há algumas anotações no vidro, parecem terem sido escritas por outros condutores.
+	[wait time="0.5"]
+	label Anotacoes
+	- Anotação 1
+		set {Anotations} += 1.0
+		"Não sei quanto tempo mais vou ficar preso nesse trem... Desde que entrei na cabine para procurar o condutor não consegui mais sair. É quase como se ele tivesse desaparecido para eu tomar seu lugar. Droga... está ficando frio e não sei o que fazer."
+		[wait time="0.5"]
+		jump Anotacoes
+	- Anotação 2
+		set {Anotations} += 1.0
+		"Achei umas roupas do antigo condutor. Incrivelmente elas estão em perfeito estado e são suficientes para me aquecer. Tirando isso não há muito mais coisas na cabine, apenas um botão no painel que faz a porta do vagão mais próximo se abrir. Infelizmente essa porta não me ajuda a sair. Pensando bem... Posso tentar usar ela para chamar ajuda externa. "
+		[wait time="0.5"]
+		jump Anotacoes
+	- Anotação 3
+		set {Anotations} += 1.0
+		"Já tive tempo suficiente dentro do trem para perceber que seu combustível nunca se acaba. Aqui é uma sensação esquisita. Além disso, parece que o trem sempre está voltando para apenas uma estação abandonada. Talvez devesse tentar parar o trem lá e esperar ajuda, mesmo nunca tendo visto ninguém por lá..."
+		[wait time="0.5"]
+		jump Anotacoes
+	- Sair
+		[wait time="0.5"]
+		jump Cabine
+- Sair da cabine.
+	if {Door} == true:
+		[sound path="res://Audio/Som/Forcibly Opening Locked Door - Sound Effect for editing.mp3" volume="-20.0"]
+		[wait time="7.0"]
+		set {Door} = false
+		you: Por que não consigo abrir essa porta!?!
+		you: Eu acabei de entrar por aqui...
+		[wait time="0.5"]
+		jump Cabine
+	else:
+		[wait time="0.5"]
+		Você já tentou isso.
+		[wait time="0.5"]
+		jump Cabine

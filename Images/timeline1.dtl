@@ -1,0 +1,109 @@
+# Acabou de entrar no trem
+[background arg="res://Images/TrainInterior0.png" fade="2.0" transition="Simple Fade"]
+[music path="res://Audio/Musica/TrainBackgroundNoise.mp3" fade="1.5" volume="-10.0"]
+join you center
+if {Assustado} == false:
+	set {BookGhost} = false
+[wait time="2.0"]
+[sound path="res://Audio/Som/doorClosing.mp3" volume="-15.0"]
+[wait time="2.5"]
+Você percebe que a porta fecha atrás de você.
+you: Para onde esse trêm está indo..?
+you: E...
+you: Não há nenhum outro passageiro...?
+[wait time="1.5"]
+label InvestigarVagao
+[background arg="res://Images/TrainInterior0.png" fade="1.0" transition="Simple Fade"]
+if {ConductorTalked} == true:
+	if {BookRead} == true:
+		[wait time="0.5"]
+		condutor: Por favor, sente-se em algum dos assentos e tenha paciência.
+		[wait time="0.5"]
+		- Sentar-se.
+			[wait time="1.0"]
+			jump timeline2/
+Investigar o vagão.
+- Verificar assentos.
+	label Livro e Silhueta
+	if {BookGhost} == false:
+		[background arg="res://Images/TrainInteriorBookNobody.png" fade="1.0"]
+		- Ler livro.
+			set {BookRead} = true
+			"Num trilho perdido, bem longe do chão,\
+corre um trenzinho sem direção.\
+Ele apita, sorri e não tem estação,\
+só leva suspiros e imaginação.\
+E dizem que um dia, num sonho encantado,\
+ele vai parar… só pra dar um recado.\
+Mas até lá, com riso e tremor,\
+segue correndo sem medo ou motor."
+			- Sair.
+				jump Livro e Silhueta
+		- Sair.
+			jump InvestigarVagao
+	else:
+		[background arg="res://Images/TrainInteriorBook.png" fade="1.0"]
+		[wait time="1.5"]
+		Você percebe um livro abandonado no assento ao lado de uma janela com uma silhueta suspeita.
+		- Chamar atenção da silhueta.
+			[sound path="res://Audio/Som/knock Sound Effect.mp3" volume="-10.0"]
+			[wait time="2.0"]
+			Você faz som batendo suavemente na janela.
+			[wait time="1.0"]
+			set {BookGhost} = false
+			[background arg="res://Images/TrainInteriorBookNobody.png" fade="1.0"]
+			[wait time="1.0"]
+			you: Ah... Devo ter incomodado ele...
+			[wait time="1.0"]
+			- Sair.
+				jump Livro e Silhueta
+		- Ler livro.
+			set {BookRead} = true
+			"Num trilho perdido, bem longe do chão,\
+corre um trenzinho sem direção.\
+Ele apita, sorri e não tem estação,\
+só leva suspiros e imaginação.\
+E dizem que um dia, num sonho encantado,\
+ele vai parar… só pra dar um recado.\
+Mas até lá, com riso e tremor,\
+segue correndo sem medo ou motor."
+			- Sair.
+				jump Livro e Silhueta
+		- Sair.
+			jump InvestigarVagao
+	[wait_input]
+- Verificar condutor.
+	label Condutor
+	if {Conductor} == true:
+		[background arg="res://Images/ConductorWindow.png" fade="1.0"]
+		[wait time="1.0"]
+		A silhueta do condutor é visível pelo vidro da cabine.
+		[wait time="1.0"]
+		- Perguntar sobre os passageiros.
+			[wait time="0.5"]
+			condutor: Ah sim, suponho que seja incomum um trem só para você...
+			[wait time="0.5"]
+			condutor: Não se preocupe, é apenas uma coincidência.
+			[wait time="0.5"]
+			jump Condutor
+		- Perguntar sobre o destino do trem.
+			set {ConductorTalked} = true
+			[wait time="0.5"]
+			condutor: ....
+			[wait time="1.0"]
+			É perceptível que o condutor não deseja falar sobre esse assunto.
+			[wait time="0.5"]
+			jump Condutor
+		- Sair.
+			jump InvestigarVagao
+		[wait_input]
+	else:
+- Sair do trem.
+	[wait time="0.5"]
+	Não é possível sair do trem.
+	[wait time="0.5"]
+	jump InvestigarVagao
+[wait time="0.5"]
+jump InvestigarVagao
+[wait_input]
+[wait time="0.1"]

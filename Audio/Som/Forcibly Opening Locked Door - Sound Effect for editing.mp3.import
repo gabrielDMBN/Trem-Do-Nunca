@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmbq67syd410h"
+path="res://.godot/imported/Forcibly Opening Locked Door - Sound Effect for editing.mp3-628d412b8a5bfc84dc9c3731dca8bcee.mp3str"
+
+[deps]
+
+source_file="res://Audio/Som/Forcibly Opening Locked Door - Sound Effect for editing.mp3"
+dest_files=["res://.godot/imported/Forcibly Opening Locked Door - Sound Effect for editing.mp3-628d412b8a5bfc84dc9c3731dca8bcee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

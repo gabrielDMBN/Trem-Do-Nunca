@@ -1,0 +1,70 @@
+# Você está falando consigo mesmo?
+[background arg="res://Images/InteriorCabine2.png" fade="1.0"]
+[music path="res://Audio/Musica/TrainBackgroundNoise.mp3" fade="1.5" volume="-10.0"]
+[wait time="1.0"]
+É possivel ver a silhueta do desconhecido dentro do vagão de passageiros.
+[wait time="0.5"]
+Antes que você conseguisse começar a explicar a situação para o deconhecido ele te faz algumas perguntas...
+[wait time="1.0"]
+unknow: Boa noite, condutor. Onde estão os outros passageiros desse trem? Além disso, qual o destino final da viagem..?
+[wait time="1.0"]
+Essas perguntas te trazem um desconforto...
+[wait time="1.0"]
+you: São as mesmas perguntas que eu fiz ao condutor quando cheguei aqui...
+[wait time="2.5"]
+Você percebe o que está acontecendo.
+[wait time="2.0"]
+O trem necessita de uma pessoa para ser o condutor...
+[wait time="1.0"]
+Uma pessoa que ficará presa para todo sempre na cabine de um trem que nunca chegará ao seu destino final.
+[wait time="1.0"]
+E a única forma de se libertar é mentir para o ignorante que acaba de entrar no trem.
+[wait time="0.5"]
+...
+[wait time="1.0"]
+- Contar a verdade.
+	[wait time="0.5"]
+	you: Você deve sair desse trem agora.
+	you: É dificil de explicar...
+	you: Porém, pelo menos um de nós deve ficar ligado à tarefa de ser o condutor eterno desse trem amaldiçoado...
+	you: Não há necessidade de nós dois ficarmos presos aqui...
+	[wait time="0.5"]
+	Mesmo sendo uma história completamente absurda, por algum motivo o desconhecido parece acreditar sem muita dificuldade.
+	[wait time="0.5"]
+	voce2: Obrigado por avisar...
+	voce2: Não sei o que deu em mim para entrar nesse trem no meio do nada.
+	voce2: Tomara que você consiga dar um jeito de se livrar dessa tarefa torturante.
+	voce2: Nunca esquecerei da sua honestidade.
+	[wait time="0.5"]
+	[background arg="res://Images/InteriorCabine1.png" fade="1.0"]
+	O homem sai do trem e some na escuridão da estação abandonada.
+	[wait time="2.0"]
+	...
+	[wait time="2.0"]
+	Você sabe que está preso para a eternidade na cabine do trem.
+	Porém não está se sentindo tão mal assim.
+	[wait time="0.5"]
+	Além do mais...
+	[wait time="2.0"]
+	Você tomou as dores dos outros e fez delas suas. Você será lembrado por isso.
+	[wait_input]
+	[end_timeline]
+- Enganar o desconhecido.
+	[wait time="0.5"]
+	condutor: Ah sim, suponho que seja incomum um trem só para você...
+	[wait time="0.5"]
+	condutor: Não se preocupe, é apenas uma coincidência.
+	[wait time="0.5"]
+	[wait time="0.5"]
+	condutor: Por favor, sente-se em algum dos assentos e tenha paciência.
+	[wait time="2.0"]
+	Você sente culpa.
+	[wait time="2.0"]
+	Mas não tem o que fazer, certo?
+	[wait time="0.5"]
+	Além do mais...
+	[wait time="2.0"]
+	Fizeram o mesmo com você.
+	[wait_input]
+	[end_timeline]
+[wait_input]

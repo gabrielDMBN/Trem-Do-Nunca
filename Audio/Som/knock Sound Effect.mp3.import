@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy1a5svwvopxg"
+path="res://.godot/imported/knock Sound Effect.mp3-e48c422be9d7e4b945851ee656869c03.mp3str"
+
+[deps]
+
+source_file="res://Audio/Som/knock Sound Effect.mp3"
+dest_files=["res://.godot/imported/knock Sound Effect.mp3-e48c422be9d7e4b945851ee656869c03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

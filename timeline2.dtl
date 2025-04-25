@@ -1,0 +1,34 @@
+# Está sentado no trem
+[background arg="res://Images/TrainInterior1.png" fade="1.0"]
+[music path="res://Audio/Musica/TrainBackgroundNoise.mp3" fade="1.5" volume="-10.0"]
+[wait time="1.0"]
+you: Já estou faz um tempo no trem e nada...
+
+you: Além disso...
+you: O condutor não disse mais nenhuma palavra.
+[wait time="0.5"]
+label O que fazer?
+O que fazer?
+- Esperar mais...
+	[wait time="0.5"]
+	Você espera mais alguns minutos.
+	[wait time="0.5"]
+	jump O que fazer?
+- Ir até a cabine.
+	[wait time="0.5"]
+	[background arg="res://Images/ConductorEmptyLightWindow.png" fade="1.0"]
+	[wait time="1.0"]
+	O condutor não aparenta estar na cabine.
+	[wait time="0.5"]
+	you: Cadê o condutor...
+	you: Eu teria visto se ele tivesse saído para o vagão principal...
+	[wait time="0.5"]
+	you: Será que ele abandonou a cabine pelo exterior!?!?
+	[wait time="1.0"]
+	A chance de o trem estar sem condutor te incomoda profundamente.
+	[wait time="0.5"]
+	- Entrar na cabine.
+		[wait time="0.5"]
+		Você força um pouco a maçaneta e consegue entrar na cabine.
+		[wait time="1.0"]
+		jump timeline3/
